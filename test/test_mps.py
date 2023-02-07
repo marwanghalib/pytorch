@@ -8528,6 +8528,8 @@ class TestConsistency(TestCase):
         'native_layer_norm': ['torch.float32'],
         'nn.functional.layer_norm': ['torch.float32'],
         'nn.functional.bilinear': ['f32'],
+        '_native_batch_norm_legit': ['f32'],
+        'native_batch_norm': ['f32'],
     }
 
 
@@ -8704,7 +8706,9 @@ class TestConsistency(TestCase):
         'view_as': ['f16', 'f32'],
         'vsplit': ['f16', 'f32'],
         'vstack': ['f16', 'f32'],
-        'zero_': ['f16', 'f32']
+        'zero_': ['f16', 'f32'],
+        '_native_batch_norm_legit': ['f32'],
+        'native_batch_norm': ['f32'],
     }
 
     # These ops that are problematic. So never run them even when
