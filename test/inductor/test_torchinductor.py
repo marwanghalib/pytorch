@@ -6984,7 +6984,9 @@ if HAS_CUDA and not TEST_WITH_ASAN:
 
             with TritonCodeGenTests.DebugDirManager(), patch.object(
                 config.trace, "enabled", True
-            ), context, V.set_debug_handler(context):
+            ), context, V.set_debug_handler(context), patch.object(
+                DebugContext, "rename"  # avoid _path overridden
+            ):
 
                 dir_name = "/".join(context._path.split("/")[:-1]) + "/"
                 fil = dir_name + "*inference*"
