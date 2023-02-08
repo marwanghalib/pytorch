@@ -8528,6 +8528,7 @@ class TestConsistency(TestCase):
         'native_layer_norm': ['torch.float32'],
         'nn.functional.layer_norm': ['torch.float32'],
         'nn.functional.bilinear': ['f32'],
+        'index_add': ['b8', 'f16', 'f32', 'i16', 'i32', 'i64', 'u8'],
     }
 
 
@@ -8734,7 +8735,6 @@ class TestConsistency(TestCase):
         'chalf': None,
         'diag_embed': [torch.uint8],
         'diagonal_scatter': [torch.uint8],
-        'index_add': None,
         'linalg.inv': [torch.float32],
         'long': None,
         'nn.functional.conv1d': [torch.int64],
