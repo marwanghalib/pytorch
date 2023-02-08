@@ -197,7 +197,9 @@ static Tensor & copy_impl(Tensor & self, const Tensor & src, bool non_blocking) 
   }
 
   if (!self.is_quantized() && src.is_quantized()) {
-    TORCH_CHECK(false, "Copying from quantized Tensor to non-quantized Tensor is not allowed, please use dequantize to get a float Tensor from a quantized Tensor");
+    string strMytestString("YO THIS IS MARWAN SPEAKING");
+    cout << strMytestString;
+    //TORCH_CHECK(false, "Copying from quantized Tensor to non-quantized Tensor is not allowed, please use dequantize to get a float Tensor from a quantized Tensor");
   }
 
   if (self.device().type() == at::kVulkan || src.device().type() == at::kVulkan) {
